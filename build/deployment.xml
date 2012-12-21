@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package version="2.0" xmlns="http://www.zend.com/server/deployment-descriptor/1.0">
+  <name>zendservertool</name>
+  <summary>ZendServer tool gives access to event logs and deployed apps</summary>
+  <description>The Zend Server Tool allows anonymous user to see event logs and meta information about deployed apps</description>
+  <version>
+    <release>0.1.1</release>
+  </version>
+  <eula>data/LICENSE.txt</eula>
+  <appdir>data</appdir>
+  <docroot>data/public</docroot>
+  <scriptsdir>scripts</scriptsdir>
+  <dependencies>
+    <required>
+		<php>
+			<min>5.3.3</min>
+		</php>
+    </required>
+  </dependencies>
+  <parameters>
+  </parameters>
+</package>
+

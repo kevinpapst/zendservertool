@@ -1,0 +1,33 @@
+<?php
+/**
+ * Zend Server Configuration
+ * -------------------------
+ *
+ * This configuration file holds the credentials required to access
+ * your Zend Server instance.
+ *
+ * You have to rename this file to server.local.php
+ *
+ * For further information regarding the configuration structure please read:
+ * https://github.com/iwalz/zendserverapi-phing
+ *
+ * @NOTE: The file server.local.php is ignored from Git by default .gitignore.
+ * Consider this good practice, as it prevents sensitive
+ * credentials from accidentally being committed into version control.
+ */
+
+return array(
+    "servers" => array (
+        "general" => array(
+            "version"       => \ZendService\ZendServerAPI\Version::ZS56,
+            "apiName"       => "",
+            "fullApiKey"    => "",
+            "readApiKey"    => "",
+            "host"          => "localhost",
+            "port"          => "10081"
+        )
+    ),
+    "settings" => array (
+        'loglevel' => \Zend\Log\Logger::DEBUG
+    )
+);

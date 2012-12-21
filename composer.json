@@ -1,0 +1,35 @@
+{
+    "name": "kevinpapst/zendservertool",
+    "description": "Provides a different view into your Zend Server instance",
+    "keywords": ["cms"],
+    "homepage": "https://github.com/kevinpapst/zendservertool",
+    "license": "BSD-3-Clause",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "Kevin Papst",
+            "homepage": "http://www.kevinpapst.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/kevinpapst/zendservertool/issues",
+        "wiki": "https://github.com/kevinpapst/zendservertool/wiki",
+        "source": "https://github.com/kevinpapst/zendservertool"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.zendframework.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zend-mvc": "2.0.*",
+        "zendframework/zend-view": "2.0.*",
+        "zendframework/zend-loader": "2.0.*",
+        "zendframework/zend-i18n": "2.0.*",
+        "zendframework/zend-version": "2.0.*",
+        "zendserverapi/zendserverapi": "dev-master"
+    }
+}

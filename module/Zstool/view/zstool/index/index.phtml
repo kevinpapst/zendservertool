@@ -1,0 +1,30 @@
+<div class="hero-unit">
+    <h1><?php echo $this->translate('Welcome to ZendServer tools') ?></h1>
+    <p><?php echo sprintf(
+            $this->translate('Congratulations! You have successfully installed the ZendServer tools Application. You are currently running the version %s with Zend Server API %s and Zend Framework %s.'),
+            '0.1',
+            'dev-master', // @TODO \ZendService\ZendServerAPI\Version::VERSION,
+            \Zend\Version\Version::VERSION
+        ) ?></p>
+</div>
+
+<div class="row">
+
+    <div class="span4">
+        <h2><?php echo $this->translate('Latest Log entries') ?></h2>
+        <p><?php echo $this->translate('All log entries within your zend server event monitor') ?></p>
+        <p><a class="btn btn-success" href="#" target="_blank"><?php echo $this->translate('All log entries') ?> &raquo;</a></p>
+    </div>
+
+    <div class="span4">
+        <h2><?php echo $this->translate('Latest Apps') ?></h2>
+        <p><?php echo $this->translate('All applications on your configured server') ?></p>
+        <p><a class="btn btn-success" href="#" target="_blank"><?php echo $this->translate('All applications') ?> &raquo;</a></p>
+   </div>
+
+   <div class="span4">
+       <h2><?php echo $this->translate('Help &amp; Support') ?></h2>
+       <p><?php echo sprintf($this->translate('If you need any help or support while using this application, you may reach us via the %sGitHub issue tracker%s.'), '<a href="https://github.com/kevinpapst/zendservertool/issues">', '</a>') ?></p>
+       <p><a class="btn btn-success" href="https://github.com/kevinpapst/zendservertool/issues" target="_blank"><?php echo $this->translate('Open a new issue') ?> &raquo;</a></p>
+   </div>
+</div>

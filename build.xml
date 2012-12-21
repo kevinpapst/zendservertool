@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Zend Server Tool (https://github.com/kevinpapst/zendservertool)
+
+@link      https://github.com/kevinpapst/zendservertool
+@copyright Copyright (c) 2012 Kevin Papst (http://www.kevinpapst.de)
+@license   https://github.com/kevinpapst/zendservertool/blob/master/LICENSE.txt New BSD License
+-->
+<project name="ZendServerTool" default="dist">
+
+    <!-- Create the required folder structure -->
+    <target name="prepare">
+        <mkdir dir="./build/data/" />
+        <delete file="./build/zendservertool.zpk" />
+    </target>
+
+    <!-- Prepares the ZPK package -->
+    <target name="build" depends="prepare">
+        <copy todir="./build/data/" >
+            <fileset dir="./" >
+                <patternset>
+                    <include name="**/**"/>
+                    <exclude name=".gitignore"/>
+                    <exclude name=".idea/**"/>
+                    <exclude name="README.md"/>
+                    <exclude name="build.xml"/>
+                    <exclude name="build/**"/>
+                </patternset>
+            </fileset>
+        </copy>
+
+        <echo msg="Fetching dependencies through composer..." />
+        <exec command="php composer.phar self-update" passthru="true" checkreturn="true" dir="./build/data/" />
+        <exec command="php composer.phar install" passthru="true" checkreturn="true" dir="./build/data/" />
+    </target>
+
+    <target name="dist" depends="build">
+        <echo msg="Creating archive..." />
+
+        <zip destfile="./build/zendservertool.zpk">
+            <fileset dir="./build">
+                <include name="**/**" />
+                <exclude name="data/composer*"/>
+                <exclude name="zendservertool.spk"/>
+            </fileset>
+        </zip>
+
+        <echo msg="Files copied and compressed in build directory OK!" />
+
+        <echo msg="Removing temporary files..." />
+        <delete dir="./build/data/" includeemptydirs="true" failonerror="true" />
+        <echo msg="Removed temporary files OK!" />
+
+        <echo msg="Now deploy the file /build/zendservertool.zpk to your Zend Server" />
+    </target>
+
+</project>
