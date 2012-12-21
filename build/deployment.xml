@@ -4,7 +4,7 @@
   <summary>ZendServer tool gives access to event logs and deployed apps</summary>
   <description>The Zend Server Tool allows anonymous user to see event logs and meta information about deployed apps</description>
   <version>
-    <release>0.1.1</release>
+    <release>0.1.2</release>
   </version>
   <eula>data/LICENSE.txt</eula>
   <appdir>data</appdir>
