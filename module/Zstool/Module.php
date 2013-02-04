@@ -11,8 +11,11 @@ namespace Zstool;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\ModuleManager\Feature\ServiceProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
-class Module
+class Module implements ServiceProviderInterface,
+    ConfigProviderInterface
 {
     public function onBootstrap(MvcEvent $e)
     {
@@ -20,6 +23,9 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        // TODO correct place ???
+        \ZendService\ZendServerAPI\PluginManager::setConfigFile(__DIR__ . '/config/servers.config.php');
     }
 
     public function getConfig()
@@ -36,5 +42,19 @@ class Module
                 ),
             ),
         );
+    }
+
+    /**
+     * Returns our ServiceManagerConfig.
+     *
+     * @return array|\Zend\ServiceManager\Config
+     */
+    public function getServiceConfig()
+    {
+        return include __DIR__ . '/config/services.config.php';
+
+        // FIXME - why is configureServiceManager() not called ???
+        //return 'Zstool\ServiceManagerConfig';
+        //return new ServiceManagerConfig();
     }
 }

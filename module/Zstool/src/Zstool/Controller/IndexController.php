@@ -9,14 +9,34 @@
 
 namespace Zstool\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use ZendService\ZendServerAPI\Monitor;
+use ZendService\ZendServerAPI\Server;
 
+/**
+ * The IndexController.
+ * Dashboard of the Zend Server toll application.
+ *
+ * @link https://github.com/kevinpapst/zendservertool
+ * @author Kevin Papst <k.papst@gmx.net>
+ * @package Zstool
+ * @subpackage Controller
+ */
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        /* @var $monitor Monitor */
+        $monitor = $this->getServiceLocator()->get('zsapi_monitor');
+        // $issues = $monitor->monitorGetIssuesListByPredefinedFilter('default');
+
+        /* @var $monitor Server */
+        $server = $this->getServiceLocator()->get('zsapi_server');
+        //$infos = $server->getSystemInfo();
+
+        return new ViewModel(array(
+            'issues' => array()//$issues
+        ));
     }
 
 }
