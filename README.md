@@ -28,7 +28,7 @@ php composer.phar install
 
 ### Zend Server configuration
 
-You have to configure your Zend Server instance in the file: /config/autoload/server.local.php
+You have to configure your Zend Server instance in the file: /module/Zstool/config/servers.config.php
 
 You need the URL and an API key, which you can obtain from the Zend Server GUI.
 
