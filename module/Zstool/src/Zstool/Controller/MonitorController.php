@@ -9,9 +9,17 @@
 
 namespace Zstool\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+/**
+ * The MonitorController.
+ * Serving all Monitor specific actions.
+ *
+ * @link https://github.com/kevinpapst/zendservertool
+ * @author Kevin Papst <k.papst@gmx.net>
+ * @package Zstool
+ * @subpackage Controller
+ */
 class MonitorController extends AbstractActionController
 {
     public function indexAction()

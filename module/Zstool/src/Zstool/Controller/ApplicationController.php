@@ -9,9 +9,17 @@
 
 namespace Zstool\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+/**
+ * The ApplicationController.
+ * Serving all Application specific actions.
+ *
+ * @link https://github.com/kevinpapst/zendservertool
+ * @author Kevin Papst <k.papst@gmx.net>
+ * @package Zstool
+ * @subpackage Controller
+ */
 class ApplicationController extends AbstractActionController
 {
     public function indexAction()
