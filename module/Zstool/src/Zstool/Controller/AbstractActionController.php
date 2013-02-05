@@ -10,8 +10,6 @@
 namespace Zstool\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController as ZendAbstractActionController;
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
 
 /**
  * The AbstractActionController.
@@ -23,20 +21,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  * @subpackage Controller
  */
 class AbstractActionController extends ZendAbstractActionController
-    implements ServiceLocatorAwareInterface
 {
-    /**
-     * @var ServiceLocatorInterface
-     */
-    protected $services;
 
-    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
-    {
-        $this->services = $serviceLocator;
-    }
-
-    public function getServiceLocator()
-    {
-        return $this->services;
-    }
 }

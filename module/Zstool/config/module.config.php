@@ -52,6 +52,11 @@ return array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
         ),
+        'invokables' => array(
+            'zsapi_server' => 'ZendService\ZendServerAPI\Server',
+            'zsapi_monitor' => 'ZendService\ZendServerAPI\Monitor',
+            'zsapi_deployment' => 'ZendService\ZendServerAPI\Deployment',
+        ),
     ),
     'translator' => array(
         'locale' => 'en_EN',

@@ -26,7 +26,6 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        /* @var $monitor Monitor */
         $monitor = $this->getServiceLocator()->get('zsapi_monitor');
         // $issues = $monitor->monitorGetIssuesListByPredefinedFilter('default');
 

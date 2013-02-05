@@ -14,8 +14,7 @@ use Zend\Mvc\MvcEvent;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
-class Module implements ServiceProviderInterface,
-    ConfigProviderInterface
+class Module implements ConfigProviderInterface
 {
     public function onBootstrap(MvcEvent $e)
     {
@@ -44,17 +43,4 @@ class Module implements ServiceProviderInterface,
         );
     }
 
-    /**
-     * Returns our ServiceManagerConfig.
-     *
-     * @return array|\Zend\ServiceManager\Config
-     */
-    public function getServiceConfig()
-    {
-        return include __DIR__ . '/config/services.config.php';
-
-        // FIXME - why is configureServiceManager() not called ???
-        //return 'Zstool\ServiceManagerConfig';
-        //return new ServiceManagerConfig();
-    }
 }
